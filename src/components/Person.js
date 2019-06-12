@@ -3,10 +3,15 @@ import styled from "styled-components"
 const PersonStyle = styled.div`
   background-color: ${props => (props.bg ? "#c1c1c1" : "#f1f1f1")};
   padding: 10px;
+  height: 100%;
+  align-items: center;
   display: flex;
   justify-content: space-between;
+  p {
+    margin-bottom: 0;
+  }
 `
-export default function Person({ person, deletePerson, index }) {
+export default function({ person, deletePerson, index }) {
   const [showPerson, setShowPerson] = useState(false)
 
   return (
