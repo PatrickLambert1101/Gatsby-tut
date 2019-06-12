@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Gatsby Tutorial`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -15,6 +15,24 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain the remote schema Query type
+        typeName: "SWAPI",
+        // This is the field under which it's accessible
+        fieldName: "swapi",
+        // URL to query from
+        url: "https://api.graphcms.com/simple/v1/swapi",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        type: `hashtag`,
+        hashtag: `starwars`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
